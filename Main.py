@@ -2,6 +2,7 @@ import json
 import tkinter
 from random import randint
 from random import shuffle
+from tkinter import Tk
 
 def antJa():
     Zeiten.append("Futur antérieur")
@@ -20,17 +21,15 @@ def Ausgeben():
     ausgab2 = tkinter.Label(main, text=Zeiten[rz])
     ausgab3 = tkinter.Label(main, text=Verbs[rv])
     Zusammen = ausgab1, ausgab2, ausgab3
-    Zwischen = tkinter.Button(anterieurFrage, text="In Zwischenablage", command=inClipboard(Zusammen))
     ausgab1.pack()
     ausgab2.pack()
     ausgab3.pack()
-    Zwischen.pack()
-
+    
 def inClipboard():
     r = Tk()
     r.withdraw()
     r.clipboard_clear()
-    r.clipboard_append('i can has clipboardz?')
+    r.clipboard_append(txt)
     r.destroy()
 
 def randomize():
